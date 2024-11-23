@@ -125,7 +125,7 @@ input, button, textarea, select {
   height: 50px;
   border: none;
   border-radius: 10px;
-  background: #fff;
+  background: #d4b61f;
   font-size: 18px;
   font-weight: 700;
 }
@@ -175,7 +175,7 @@ input, button, textarea, select {
   color: #555;
   margin-top: 10px;
 }
-.categories .categories__wrapper .categories__item {
+.categories .categories__wrapper .categories__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,14 +185,19 @@ input, button, textarea, select {
           flex-direction: row;
   gap: 50px;
   overflow-x: auto;
-  padding-bottom: 10px;
+  padding: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.categories .categories__wrapper .categories__item .categories__img {
+.categories .categories__wrapper .categories__items::-webkit-scrollbar {
+  display: none;
+}
+.categories .categories__wrapper .categories__items .categories__img {
   text-align: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-.categories .categories__wrapper .categories__item .categories__img img {
+.categories .categories__wrapper .categories__items .categories__img img {
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -202,7 +207,7 @@ input, button, textarea, select {
   border: none;
   cursor: pointer;
 }
-.categories .categories__wrapper .categories__item .categories__img h3 {
+.categories .categories__wrapper .categories__items .categories__img h3 {
   margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -230,16 +235,126 @@ input, button, textarea, select {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+.products__wrapper .loading {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .products__wrapper .card {
+  background: #fff;
+  color: #f6c74f;
   width: 300px;
   padding: 12px;
-  border: 1px solid #ddd;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.products__wrapper .card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 .products__wrapper .card img {
   width: 100%;
   height: 250px;
   -o-object-fit: contain;
      object-fit: contain;
+  margin-bottom: 15px;
+}
+.products__wrapper .card h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 15px 0;
+}
+.products__wrapper .card strong {
+  font-size: 1rem;
+  color: #f6d94f;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.products__wrapper .card button {
+  background: #f6d94f;
+  color: #fff;
+  padding: 10px;
+  margin-left: 0;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.products__wrapper .card button:hover {
+  background: #e1bc05;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.products__wrapper .btn {
+  margin: 30px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 25px;
+  background: #dbcb15;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.products__wrapper .btn:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-box-shadow: 5px 5px 25px #f21e1e;
+          box-shadow: 5px 5px 25px #f21e1e;
+  border-radius: 15px;
+}
+
+button {
+  margin: 0 auto;
+  padding: 12px 25px;
+  background: #f6d94f;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+button:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-box-shadow: 5px 5px 25px #d6a11b;
+          box-shadow: 5px 5px 25px #d6a11b;
+  border-radius: 15px;
 }
 
 .btn {
